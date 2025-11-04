@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Clixus",
+  "version": "2.4.0",
+  "description": "Malicious URL detection: VirusTotal + NLP (page text + link) with combined risk scoring on click.",
+  "permissions": ["tabs", "storage", "activeTab", "scripting", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+
+  "action": {
+    "default_title": "Clixus",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon.png",
+      "32": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    }
+  },
+
+  "icons": {
+    "16": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["nlp_link.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
