@@ -1,6 +1,6 @@
 // background.js — VT checker + small cache. NLP is done in content (post-VT).
 
-const VT_API = "6158cba0465cc7eb3bdef9a1b5a460be5e0ecb3defedb0eea597c90339fd53a6"; // <-- add your key
+const VT_API = "YOUR_VT_API_KEY_HERE"; // <-- add your key
 const VT_CACHE_TTL_MS = 5 * 60 * 1000;
 const vtCache = new Map();
 
